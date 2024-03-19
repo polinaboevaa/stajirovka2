@@ -1,0 +1,1 @@
+<?php $filesInfo = ["/local/templates/yanicode/template_styles.css" => "171088174649776",]; ?>

@@ -41,7 +41,7 @@
     </header>
     <main class="website-workarea">
 
-    <section class="banner banner_before1" style="background-image: url('./assets/images/banner_blog.jpg');">
+    <section class="banner banner_before1" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/images/banner_blog.jpg');">
             <div class="banner-wrapper">
                 <div class="container">
                     <div class="banner__content">
@@ -101,7 +101,7 @@
                     </div>
                 </a> <a href="./blog-details.html" class="blog">
                     <div class="blog__img">
-                        <img width="100%" height="100%" src="./assets/images/test_blog-img2.jpg" alt="">
+                        <img width="100%" height="100%" src="<?=SITE_TEMPLATE_PATH?>/images/test_blog-img2.jpg" alt="">
                     </div>
                     <div class="blog__desc">
                         <div class="blog__title">
@@ -116,7 +116,7 @@
                     </div>
                 </a> <a href="./blog-details.html" class="blog">
                     <div class="blog__img">
-                        <img width="100%" height="100%" src="./assets/images/test_blog-img3.jpg" alt="">
+                        <img width="100%" height="100%" src="<?=SITE_TEMPLATE_PATH?>/images/test_blog-img3.jpg" alt="">
                     </div>
                     <div class="blog__desc">
                         <div class="blog__title">
@@ -131,7 +131,7 @@
                     </div>
                 </a> <a href="./blog-details.html" class="blog">
                     <div class="blog__img">
-                        <img width="100%" height="100%" src="./assets/images/test_blog-img4.jpg" alt="">
+                        <img width="100%" height="100%" src="<?=SITE_TEMPLATE_PATH?>/images/test_blog-img4.jpg" alt="">
                     </div>
                     <div class="blog__desc">
                         <div class="blog__title">

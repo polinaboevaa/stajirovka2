@@ -1,122 +1,170 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Мебельная компания");
-?><p>
-	 Наша компания существует на Российском рынке с 1992 года. За это время «Мебельная компания» прошла большой путь от маленькой торговой фирмы до одного из крупнейших производителей корпусной мебели в России.
-</p>
-<p>
-	 «Мебельная компания» осуществляет производство мебели на высококлассном оборудовании с применением минимальной доли ручного труда, что позволяет обеспечить высокое качество нашей продукции. Налажен производственный процесс как массового и индивидуального характера, что с одной стороны позволяет обеспечить постоянную номенклатуру изделий и индивидуальный подход – с другой.
-</p>
-<h3>Наша продукция</h3>
- <?$APPLICATION->IncludeComponent(
-	"bitrix:furniture.catalog.index",
-	"",
-	Array(
-		"CACHE_GROUPS" => "N",
+?><? if ($APPLICATION->GetCurPage(false) === '/'): ?> <main class="website-workarea"> <section class="banner banner_before1" style="background-image: url('<?=SITE_TEMPLATE_PATH?>/images/banner_blog.jpg');">
+<div class="banner-wrapper">
+	<div class="container">
+		<div class="banner__content">
+			<p>
+				 Более 20-ти лет управляю<br>
+				 творческими проектами в<br>
+				 брендинге.
+			</p>
+			<p>
+ <b class="text_gold">
+				Моя личная миссия: </b>делать<br>
+				 вас богаче, а ваших<br>
+				 клиентов счастливее!
+			</p>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="stages">
+		<div class="stages__item">
+			<div class="stages__step">
+				 01
+			</div>
+			<div class="stages__desc-step">
+				 АУДИТ
+			</div>
+		</div>
+		<div class="stages__item">
+			<div class="stages__step">
+				 02
+			</div>
+			<div class="stages__desc-step">
+				 СТРАТЕГИЯ
+			</div>
+		</div>
+		<div class="stages__item">
+			<div class="stages__step">
+				 03
+			</div>
+			<div class="stages__desc-step">
+				 КОНЦЕПЦИЯ
+			</div>
+		</div>
+		<div class="stages__item">
+			<div class="stages__step">
+				 04
+			</div>
+			<div class="stages__desc-step">
+				 ДИЗАЙН
+			</div>
+		</div>
+		<div class="stages__item">
+			<div class="stages__step">
+				 05
+			</div>
+			<div class="stages__desc-step">
+				 КОММУНИКАЦИИ
+			</div>
+		</div>
+	</div>
+</div>
+ </section>
+<? endif; ?> <?$APPLICATION->IncludeComponent(
+	"bitrix:news", 
+	"yanicode_news", 
+	array(
+		"ADD_ELEMENT_CHAIN" => "N",
+		"ADD_SECTIONS_CHAIN" => "Y",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"BROWSER_TITLE" => "-",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
-		"IBLOCK_BINDING" => "section",
-		"IBLOCK_ID" => "2",
-		"IBLOCK_TYPE" => "products"
-	)
-);?>
-<h3>Наши услуги</h3>
- <?$APPLICATION->IncludeComponent(
-	"bitrix:furniture.catalog.index",
-	"",
-	Array(
-		"CACHE_GROUPS" => "N",
-		"CACHE_TIME" => "36000000",
-		"CACHE_TYPE" => "A",
-		"IBLOCK_BINDING" => "element",
-		"IBLOCK_ID" => "3",
-		"IBLOCK_TYPE" => "products"
-	)
-);?><?$APPLICATION->IncludeComponent("bitrix:news", "yanicode_newslist", Array(
-	"COMPONENT_TEMPLATE" => ".default",
-		"IBLOCK_TYPE" => "news",	// Тип инфоблока
-		"IBLOCK_ID" => "1",	// Инфоблок
-		"NEWS_COUNT" => "20",	// Количество новостей на странице
-		"USE_SEARCH" => "N",	// Разрешить поиск
-		"USE_RSS" => "N",	// Разрешить RSS
-		"USE_RATING" => "N",	// Разрешить голосование
-		"USE_CATEGORIES" => "N",	// Выводить материалы по теме
-		"USE_REVIEW" => "N",	// Разрешить отзывы
-		"USE_FILTER" => "N",	// Показывать фильтр
-		"SORT_BY1" => "ACTIVE_FROM",	// Поле для первой сортировки новостей
-		"SORT_ORDER1" => "DESC",	// Направление для первой сортировки новостей
-		"SORT_BY2" => "SORT",	// Поле для второй сортировки новостей
-		"SORT_ORDER2" => "ASC",	// Направление для второй сортировки новостей
-		"CHECK_DATES" => "Y",	// Показывать только активные на данный момент элементы
-		"SEF_MODE" => "N",	// Включить поддержку ЧПУ
-		"AJAX_MODE" => "N",	// Включить режим AJAX
-		"AJAX_OPTION_JUMP" => "N",	// Включить прокрутку к началу компонента
-		"AJAX_OPTION_STYLE" => "Y",	// Включить подгрузку стилей
-		"AJAX_OPTION_HISTORY" => "N",	// Включить эмуляцию навигации браузера
-		"AJAX_OPTION_ADDITIONAL" => "",	// Дополнительный идентификатор
-		"CACHE_TYPE" => "A",	// Тип кеширования
-		"CACHE_TIME" => "36000000",	// Время кеширования (сек.)
-		"CACHE_FILTER" => "N",	// Кешировать при установленном фильтре
-		"CACHE_GROUPS" => "Y",	// Учитывать права доступа
-		"SET_LAST_MODIFIED" => "N",	// Устанавливать в заголовках ответа время модификации страницы
-		"SET_TITLE" => "Y",	// Устанавливать заголовок страницы
-		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",	// Включать инфоблок в цепочку навигации
-		"ADD_SECTIONS_CHAIN" => "Y",	// Включать раздел в цепочку навигации
-		"ADD_ELEMENT_CHAIN" => "N",	// Включать название элемента в цепочку навигации
-		"USE_PERMISSIONS" => "N",	// Использовать дополнительное ограничение доступа
-		"STRICT_SECTION_CHECK" => "N",	// Строгая проверка раздела
-		"DISPLAY_DATE" => "Y",	// Выводить дату элемента
-		"DISPLAY_PICTURE" => "Y",	// Выводить изображение для анонса
-		"DISPLAY_PREVIEW_TEXT" => "Y",	// Выводить текст анонса
-		"USE_SHARE" => "N",	// Отображать панель соц. закладок
-		"PREVIEW_TRUNCATE_LEN" => "",	// Максимальная длина анонса для вывода (только для типа текст)
-		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
-		"LIST_FIELD_CODE" => array(	// Поля
+		"CHECK_DATES" => "Y",
+		"COLOR_NEW" => "3E74E6",
+		"COLOR_OLD" => "C0C0C0",
+		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
+		"DETAIL_DISPLAY_TOP_PAGER" => "N",
+		"DETAIL_FIELD_CODE" => array(
+			0 => "PREVIEW_PICTURE",
+			1 => "Описание для анонса",
+			2 => "Картинка для анонса",
+		),
+		"DETAIL_PAGER_SHOW_ALL" => "Y",
+		"DETAIL_PAGER_TEMPLATE" => "",
+		"DETAIL_PAGER_TITLE" => "Страница",
+		"DETAIL_PROPERTY_CODE" => array(
 			0 => "",
 			1 => "",
 		),
-		"LIST_PROPERTY_CODE" => array(	// Свойства
+		"DETAIL_SET_CANONICAL_URL" => "N",
+		"DISPLAY_AS_RATING" => "rating",
+		"DISPLAY_BOTTOM_PAGER" => "Y",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FONT_MAX" => "50",
+		"FONT_MIN" => "10",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "1",
+		"IBLOCK_TYPE" => "news",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"LIST_FIELD_CODE" => array(
 			0 => "",
 			1 => "",
 		),
-		"HIDE_LINK_WHEN_NO_DETAIL" => "N",	// Скрывать ссылку, если нет детального описания
-		"DISPLAY_NAME" => "Y",	// Выводить название элемента
-		"META_KEYWORDS" => "-",	// Установить ключевые слова страницы из свойства
-		"META_DESCRIPTION" => "-",	// Установить описание страницы из свойства
-		"BROWSER_TITLE" => "-",	// Установить заголовок окна браузера из свойства
-		"DETAIL_SET_CANONICAL_URL" => "N",	// Устанавливать канонический URL
-		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
-		"DETAIL_FIELD_CODE" => array(	// Поля
+		"LIST_PROPERTY_CODE" => array(
 			0 => "",
 			1 => "",
 		),
-		"DETAIL_PROPERTY_CODE" => array(	// Свойства
-			0 => "",
-			1 => "",
-		),
-		"DETAIL_DISPLAY_TOP_PAGER" => "N",	// Выводить над списком
-		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",	// Выводить под списком
-		"DETAIL_PAGER_TITLE" => "Страница",	// Название категорий
-		"DETAIL_PAGER_TEMPLATE" => "",	// Название шаблона
-		"DETAIL_PAGER_SHOW_ALL" => "Y",	// Показывать ссылку "Все"
-		"PAGER_TEMPLATE" => ".default",	// Шаблон постраничной навигации
-		"DISPLAY_TOP_PAGER" => "N",	// Выводить над списком
-		"DISPLAY_BOTTOM_PAGER" => "Y",	// Выводить под списком
-		"PAGER_TITLE" => "Новости",	// Название категорий
-		"PAGER_SHOW_ALWAYS" => "N",	// Выводить всегда
-		"PAGER_DESC_NUMBERING" => "N",	// Использовать обратную навигацию
-		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",	// Время кеширования страниц для обратной навигации
-		"PAGER_SHOW_ALL" => "N",	// Показывать ссылку "Все"
-		"PAGER_BASE_LINK_ENABLE" => "N",	// Включить обработку ссылок
-		"SET_STATUS_404" => "N",	// Устанавливать статус 404
-		"SHOW_404" => "N",	// Показ специальной страницы
-		"MESSAGE_404" => "",	// Сообщение для показа (по умолчанию из компонента)
-		"VARIABLE_ALIASES" => array(
-			"SECTION_ID" => "SECTION_ID",
-			"ELEMENT_ID" => "ELEMENT_ID",
+		"LIST_USE_SHARE" => "",
+		"MEDIA_PROPERTY" => "",
+		"MESSAGE_404" => "",
+		"META_DESCRIPTION" => "-",
+		"META_KEYWORDS" => "-",
+		"NEWS_COUNT" => "20",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PERIOD_NEW_TAGS" => "",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"SEF_FOLDER" => "/",
+		"SEF_MODE" => "Y",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_STATUS_404" => "N",
+		"SET_TITLE" => "Y",
+		"SHOW_404" => "N",
+		"SLIDER_PROPERTY" => "",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N",
+		"TAGS_CLOUD_ELEMENTS" => "150",
+		"TAGS_CLOUD_WIDTH" => "100%",
+		"TEMPLATE_THEME" => "blue",
+		"USE_CATEGORIES" => "N",
+		"USE_FILTER" => "N",
+		"USE_PERMISSIONS" => "N",
+		"USE_RATING" => "N",
+		"USE_REVIEW" => "N",
+		"USE_RSS" => "N",
+		"USE_SEARCH" => "N",
+		"USE_SHARE" => "N",
+		"COMPONENT_TEMPLATE" => "yanicode_news",
+		"SEF_URL_TEMPLATES" => array(
+			"news" => "",
+			"section" => "",
+			"detail" => "#ELEMENT_ID#/",
 		)
 	),
 	false
-);?>
-<p>
-</p><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?></main><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

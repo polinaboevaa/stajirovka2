@@ -77,14 +77,14 @@ html {
   
   @font-face {
     font-family: "GothamPro";
-    src: local("GothamPro-Regular"), url("./fonts/GothamPro/GothamPro.woff2") format("woff2"), url("./fonts/GothamPro/GothamPro.woff") format("woff"), url("./fonts/GothamPro/GothamPro.ttf") format("ttf");
+    src: local("GothamPro-Regular"), url("<?=SITE_TEMPLATE_PATH?>/fonts/GothamPro/GothamPro.woff2") format("woff2"), url("./fonts/GothamPro/GothamPro.woff") format("woff"), url("<?=SITE_TEMPLATE_PATH?>/fonts/GothamPro/GothamPro.ttf") format("ttf");
     font-style: normal;
     font-weight: normal;
     font-display: fallback; }
   
   @font-face {
     font-family: "GothamPro-Bold";
-    src: local("GothamPro-Bold"), url("./fonts/GothamPro/GothamPro-Bold.woff2") format("woff2"), url("./fonts/GothamPro/GothamPro-Bold.woff") format("woff"), url("./fonts/GothamPro/GothamPro-Bold.ttf") format("ttf");
+    src: local("GothamPro-Bold"), url("<?=SITE_TEMPLATE_PATH?>/fonts/GothamPro/GothamPro-Bold.woff2") format("woff2"), url("./fonts/GothamPro/GothamPro-Bold.woff") format("woff"), url("<?=SITE_TEMPLATE_PATH?>/fonts/GothamPro/GothamPro-Bold.ttf") format("ttf");
     font-style: normal;
     font-weight: bold;
     font-display: fallback; }

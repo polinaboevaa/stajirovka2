@@ -1,7 +1,7 @@
 <?
 if($INCLUDE_FROM_CACHE!='Y')return false;
-$datecreate = '001710881069';
-$dateexpire = '001746881069';
+$datecreate = '001710962023';
+$dateexpire = '001746962023';
 $ser_content = 'a:2:{s:7:"CONTENT";s:631:"<div class="product-list">
 	<div class="product">
 		<div class="product-overlay"></div>

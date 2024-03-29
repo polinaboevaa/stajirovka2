@@ -20,34 +20,38 @@
 	?>
         
         
-		<?if( $FIELD_SID == "SIMPLE_QUESTION_221" || $FIELD_SID == "SIMPLE_QUESTION_143")  { ?> 
+		 <?if( $FIELD_SID == "SIMPLE_QUESTION_221" || $FIELD_SID == "SIMPLE_QUESTION_143")  { ?> <!--фио и название -->
             <div class="popup-feedback__input-cover">
                 <label for="" class="popup-feedback__input-label"><?=$arQuestion["CAPTION"]?></label>
 				<?=str_replace('inputtext','popup-feedback__input js-validated-field',$arQuestion["HTML_CODE"])?>
+                <?if( $FIELD_SID == "SIMPLE_QUESTION_221"){?>
+                    <span class="valid-error-span">Заполните поле</span>
+                <?}?>
             </div>
         <?}
-        if($FIELD_SID == "SIMPLE_QUESTION_387"){?>
+        if($FIELD_SID == "SIMPLE_QUESTION_387"){?>   <!-- телефон-->
            <div class="popup-feedback__double-column">
             <div class="popup-feedback__input-cover">
                 <label for="" class="popup-feedback__input-label"><?=$arQuestion["CAPTION"]?></label>
-				<?=str_replace('inputtext','popup-feedback__input js-validated-field',$arQuestion["HTML_CODE"])?>
-                <!-- <span class="valid-error-span">Заполните поле</span> -->
+				<?=str_replace('inputtext','popup-feedback__input mask-phone-js js-validated-field',$arQuestion["HTML_CODE"])?>
+                <span class="valid-error-span">Заполните поле</span>
             </div>
         <?}
-         if($FIELD_SID == "SIMPLE_QUESTION_943"){?>
+         if($FIELD_SID == "SIMPLE_QUESTION_943"){?>  <!-- почта-->
              <div class="popup-feedback__input-cover">
                  <label for="" class="popup-feedback__input-label"><?=$arQuestion["CAPTION"]?></label>
-                 <?=str_replace('inputtext','popup-feedback__input js-validated-field',$arQuestion["HTML_CODE"])?>
+                 <?=str_replace(array('inputtext','type="text"','name="form_text_3"'),array('popup-feedback__input js-validated-field','type="mail"','data-validated_name="mail"'),$arQuestion["HTML_CODE"])?>
+                 <span class="valid-error-span">Некоректный mail</span>
              </div>
             </div>
          <?}
-        if($FIELD_SID == "SIMPLE_QUESTION_559"){?>
+        if($FIELD_SID == "SIMPLE_QUESTION_559"){?>  <!-- задача-->
             <div class="popup-feedback__input-cover">
                 <label for="" class="popup-feedback__input-label"><?=$arQuestion["CAPTION"]?></label>
                 <?=str_replace('inputtextarea','popup-feedback__textarea',$arQuestion["HTML_CODE"])?>
             </div>
         <?}
-        if($FIELD_SID == "SIMPLE_QUESTION_383"){?>
+        if($FIELD_SID == "SIMPLE_QUESTION_383"){?> <!--чекбоксы-->
             <div class="popup-feedback__consent">
                 <div class="popup-feedback__consent-form-wrapper">
                 <?=str_replace(array('<input','checked id="6"', 'name="form_checkbox_SIMPLE_QUESTION_383[]"','value="6"','<label for="6">Нажимая кнопку «Отправить», я даю свое согласие на обработку моих персональных данных, в соответствии с Федеральным законом от 27.07.2006 года №152-ФЗ «О персональных данных», на условиях и для целей, определенных в Согласии на обработку персональных данных.</label>'),array('<input class="popup-feedback__consent-input"','id="consent1"','','checked="checked"',''),$arQuestion["HTML_CODE"])?>

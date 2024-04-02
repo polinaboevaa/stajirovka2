@@ -14,7 +14,7 @@
 
 *.css.map
 *.js.map
-*.zip
+
 *.gzip
 *.gz
 *.tgz
